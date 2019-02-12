@@ -1,0 +1,2 @@
+class ProductQuantityBalance < ApplicationRecord
+end

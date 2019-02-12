@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Book Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Buyer</th>
+      <th>Product</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @book_products.each do |book_product| %>
+      <tr>
+        <td><%= book_product.try(:buyer).try(:name)%></td>
+        <td><%= book_product..try(:product).try(:name) %></td>
+        <td><%= book_product.quantity %></td>
+        <td><%= book_product.start_date %></td>
+        <td><%= book_product.end_date %></td>
+        <td><%= link_to 'Show', book_product %></td>
+        <td><%= link_to 'Edit', edit_book_product_path(book_product) %></td>
+        <td><%= link_to 'Destroy', book_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book Product', new_book_product_path %>

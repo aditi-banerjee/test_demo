@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Buyer:</strong>
+  <%= @book_product.try(:buyer).try(:name) %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @book_product.try(:product).try(:name) %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @book_product.quantity %>
+</p>
+
+
+<p>
+  <strong>Start date:</strong>
+  <%= @book_product.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @book_product.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_book_product_path(@book_product) %> |
+<%= link_to 'Back', book_products_path %>
